@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis series favoritas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+
+  <section id="pantalla-login" class="pantalla">
+    <div class="caja-login">
+
+      <lottie-player
+        src="gatito.json"
+        class="personaje"
+        id="personaje"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+      ></lottie-player>
+
+      <h1>Iniciar sesión</h1>
+
+      <form id="form-login" novalidate>
+
+        <div class="campo">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="ejemplo@dominio.com"
+          />
+          <span class="error" id="error-email"></span>
+        </div>
+
+        <div class="campo">
+          <label for="password">Contraseña:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Mínimo 4 caracteres"
+          />
+          <span class="error" id="error-password"></span>
+        </div>
+
+        <button type="submit" class="boton">Ingresar</button>
+      </form>
+
+    </div>
+  </section>
+
+  <section id="pantalla-principal" class="pantalla oculta">
+    <header class="encabezado">
+      <h1>Mis series favoritas</h1>
+      <button id="btn-cerrar-sesion" class="boton-secundario">Cerrar sesión</button>
+    </header>
+
+    <main class="contenedor-tarjetas" id="contenedor-tarjetas">
+      <p class="aviso">Cargando series...</p>
+    </main>
+
+    <section id="seccion-pokemon" class="seccion-pokemon">
+      <button id="btn-pokemon" class="boton-pokemon">👉 Traer Pokémon aleatorio</button>
+      <div id="contenedor-pokemon" class="contenedor-pokemon">
+        <!-- El pokemon se cargará aquí -->
+      </div>
+    </section>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
